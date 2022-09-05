@@ -60,12 +60,7 @@ switch ($_GET['cari']) {
 		$row = mysqli_fetch_array(mysqli_query($konek,"SELECT COUNT(*) as count FROM transaksi where $sort_index $operator '$postData' $order_by "))['count'];
 		$page = ceil($row / $limit);
 		if ($page > 1) $row -= $limit * ($page - 1);
-        // echo json_encode([
-        //     "SELECT COUNT(*) as count  FROM transaksi" => $count,
-        //     "SELECT COUNT(*) as count FROM transaksi where $sort_index $operator '$postData' $order_by " => $row,
-        //     "PAGE" => $page
-        // ]);
-        //     return 0;
+        
 
 		echo json_encode([
 			'postData' => $postData,
